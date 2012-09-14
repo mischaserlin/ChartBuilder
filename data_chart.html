@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AppAviary Charts </title>
+		<link rel="stylesheet" href="ui-lightness/jquery-ui-1.8.23.custom.css"/>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="data_chart.css"/>
+	</head>
+	<body>
+		<div class="container top">
+			<div class="row">
+				<h1 class="span6">Dashboard Stats</h1>
+				<div class="addChart span2 floatRight"><button class="btn btn-warning btn-large">+ Chart</button></div>
+			</div>
+		</div>
+		<div class="container graphArea"></div>
+
+	<script id="graphAreaTemplate" type="text/x-handlebars-template">
+
+			<div class="singleGraph row">
+				<div id="graph{{number}}" class="span12"></div>
+			</div>
+
+	</script>
+
+	<script id="chartOptionsTemplate" type="text/x-handlebars-template">	
+
+			<div class="row">
+				<label class="chartType span2">Chart Type</label>
+				<p>Line Chart</p> //Only Chart for now. All data is a number over time.
+				// <select class="chartTypeField field">
+				// 	<option value="line">Line Chart</option>
+				// 	<option value="bar">Bar Chart</option>
+				// 	<option value="pie">Pie Chart</option>
+				// </select>
+			</div>
+			<div class="row">
+				<label class="chartTitle span2">Chart Title</label>
+				<input class="chartTitleField field" type="text"></input>
+			</div>
+			<div class="row">		
+				<label class="chartYAxisTitle span2">yAxis Title</label>	
+				<input class="chartYAxisTitleField field" type="text"></input>
+			</div>
+			<div class="row">
+				<label class="chartYAxisData span2">yAxis Data</label>	
+				<ol class="chartYAxisDataList span2">
+				{{#key_value dataSet}}
+					<li>
+						<input class="chartYAxisDataChoice" type="checkbox" value="{{key}}">{{key}}</input>
+					</li>
+				{{/key_value}}
+			</div>
+			<div class="row">
+				<div class="startDate span2">Start Date</div>
+				<p><input class="startDateField datepicker" type="text"></input></p>
+			</div>
+			<div class="row">
+				<div class="endDate span2">End Date</div> 
+				<p><input class="endDateField datepicker" type="text"></input></p>
+			</div>
+			<div class='row centerText'><button class='createChart btn btn-success btn-large'>Create Chart</button></div>
+		
+	</script>
+	
+	<script src="javascript/jquery-1.8.0.min.js" type="text/javascript"></script>
+	<script src="javascript/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
+	<script src="javascript/highchart/highcharts.js" type="text/javascript"></script>
+	<script src="javascript/handlebars.js" type="text/javascript"></script>
+	<script src="javascript/data_chart.js" type="text/javascript"></script>	
+	</body>
+</html>
