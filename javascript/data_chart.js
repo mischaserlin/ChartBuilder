@@ -54,7 +54,7 @@ $(function(){
 			chart: {
 				renderTo: this.renderDiv
 				, zoomType: 'x'
-				, spacingRight: 20;
+				, spacingRight: 20
 			},
 			title: {
 				text: this.chartTitle
@@ -186,7 +186,7 @@ $(function(){
 			}
 		});
 
-		this.chartCreation();
+		this.lineChartCreation();
 	};
 
 
